@@ -1,13 +1,19 @@
+# NotificationService.py
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.header import Header
+import logging
+from logger_config import setup_logger
+
+logger = setup_logger()
 
 class NotificationService:
     def __init__(self):
         self.server = smtplib.SMTP('smtp.gmail.com', 587)
         self.server.starttls()
-        self.server.login('', '')
+        self.server.login('ruslan.yagafarov1@gmail.com', 'ykwd uofm rwbi ljyf')
+        logger.info("NotificationService initialized")
 
     def send_email_to_branch(self, city, name):
         # Убираем пробелы и приводим к нижнему регистру
@@ -23,9 +29,10 @@ class NotificationService:
 
         try:
             self.server.sendmail('your_email@gmail.com', recipient_email, message.as_string())
-            print("Email successfully sent!")
+            logger.info(f"Email successfully sent to {recipient_email}")
         except Exception as e:
-            print(f"Ошибка при отправке письма: {e}")
+            logger.error(f"Ошибка при отправке письма: {e}")
 
     def close(self):
         self.server.quit()
+        logger.info("NotificationService closed")
