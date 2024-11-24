@@ -24,14 +24,18 @@ pip install -r requirements.txt
 
 Создайте файл .env в корневой директории проекта и добавьте в него следующие строки:
 ``` plaintext
-
-
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
+AUTH_TELEGRAM_BOT_TOKEN=your_auth_telegram_bot_token
 GMAIL_USER=your_email@gmail.com
 MAIL_PASSWORD=your_email_password
 GOOGLE_SHEET_ID=your_google_sheet_id
+GOOGLE_SHEET_CREDENTIALS=credentials.json
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASSWORD=your_email_password
 ```
-Замените your_telegram_bot_token, your_email@gmail.com, your_email_password и your_google_sheet_id на реальные данные.
+Замените your_telegram_bot_token, your_auth_telegram_bot_token, your_email@gmail.com, your_email_password, и your_google_sheet_id на реальные данные.
 ### 3. Запуск бота
 
 Запустите бота с помощью следующей команды:
@@ -41,21 +45,23 @@ python Main.py
 
 ### Структура проекта:
 
-`TelegramBotService.py:` Основной файл бота, который обрабатывает команды и состояния диалога.
+- `TelegramBotService.py:` Основной файл бота, который обрабатывает команды и состояния диалога.
 
-`DatabaseService.py:` Сервис для работы с базой данных SQLite.
+- `DatabaseService.py:` Сервис для работы с базой данных SQLite.
 
-`NotificationService.py:` Сервис для отправки уведомлений по электронной почте и в Telegram-чат.
+- `NotificationService.py:` Сервис для отправки уведомлений по электронной почте и в Telegram-чат.
 
-`TelegramBotHandler.py:` Класс для взаимодействия с Telegram Bot API.
+- `TelegramBotHandler.py:` Класс для взаимодействия с Telegram Bot API.
 
-`logger_config.py:` Настройка логгера для проекта.
+- `logger_config.py:` Настройка логгера для проекта.
 
-`cities.json:` Файл с данными о городах и филиалах.
+- `cities.json:` Файл с данными о городах и филиалах.
 
-`Main.py:` Основной файл для запуска бота.
+- `Main.py:` Основной файл для запуска бота.
 
-`.env:` Файл с переменными окружения.
+- `.env:` Файл с переменными окружения.
 
-`README.md:` Файл с описанием проекта и инструкциями по установке и запуску.
+- `README.md:` Файл с описанием проекта и инструкциями по установке и запуску.
+
+- `credentials.json:` Файл с учетными данными для доступа к Google Sheets API.
 
