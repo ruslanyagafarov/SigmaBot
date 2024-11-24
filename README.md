@@ -23,7 +23,7 @@ Copy
 ```bash
 pip install -r requirements.txt
 ```
-2. ## Настройка переменных окружения
+### 2. Настройка переменных окружения
 
 Создайте файл .env в корневой директории проекта и добавьте в него следующие строки:
 ``` plaintext
@@ -35,7 +35,7 @@ MAIL_PASSWORD=your_email_password
 GOOGLE_SHEET_ID=your_google_sheet_id
 ```
 Замените your_telegram_bot_token, your_email@gmail.com, your_email_password и your_google_sheet_id на реальные данные.
-3. ## Запуск бота
+### 3. Запуск бота
 
 Запустите бота с помощью следующей команды:
 ``` bash
