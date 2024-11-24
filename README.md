@@ -1,6 +1,3 @@
-markdown
-Copy
-
 # SigmaBot - Telegram Bot для обработки заявок
 
 ## Описание
