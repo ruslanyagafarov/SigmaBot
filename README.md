@@ -41,6 +41,7 @@ GOOGLE_SHEET_ID=your_google_sheet_id
 ``` bash
 python Main.py
 ```
+
 ### Структура проекта:
 
     ```TelegramBotService.py:``` Основной файл бота, который обрабатывает команды и состояния диалога.
